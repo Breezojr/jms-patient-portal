@@ -1,6 +1,7 @@
 import HeaderComponent from "@/components/header.component";
 import React from "react";
 import {Clock5, Plus} from "lucide-react";
+import FooterComponent from "@/components/footer.component";
 
 export default function Home() {
 
@@ -322,19 +323,70 @@ export default function Home() {
                         </div>
                     </div>
                     <div className={' mt-48'}>
-                        <div className={''}>
+                        <div className={'grid grid-cols-2'}>
                             <div>
+                                <img
+                                    className="w-fit rounded-3xl shadow-lg h-80"
+                                    src={'assets/images/section-1.jpeg'}
+                                    alt="home screen photo"
+                                />
+                                <div className={'-mt-56 ms-56'}>
+                                    <img
+                                        className="w-64 rounded-3xl shadow-lg h-96 rotate-90"
+                                        src={'assets/images/section-1.jpeg'}
+                                        alt="home screen photo"
+                                    />
+                                </div>
 
                             </div>
+                            <div>
+                                <h4 className={'text-black mb-4'} style={{fontSize: '40px', fontWeight: 700}}>Download
+                                    our easy to use mobile app!</h4>
+                                <div className={'mb-6'}>
+                                    <h4 className={'text-gray-500'}
+                                        style={{fontSize: '20px', fontWeight: 700,}}>Customer App</h4>
+                                    <p className={'text-gray-500'} style={{fontSize: '20px', fontWeight: 500,}}> You
+                                        will get a credit card that will allow you to pay on anywhere. </p>
+                                </div>
 
+                                <div className={'mb-6'}>
+                                    <h4 className={'text-gray-500'}
+                                        style={{fontSize: '20px', fontWeight: 700,}}>Customer App</h4>
+                                    <p className={'text-gray-500'} style={{fontSize: '20px', fontWeight: 500,}}> You will get a credit card that will allow you to pay on anywhere.. </p>
+                                </div>
 
+                                <div className={'flex px-16 gap-4'}>
+                                    <button
+                                        className={'text-white bg-blue-900 px-8 py-5 rounded-l-full rounded-r-full font-semibold flex items-center'}
+                                        style={{fontSize: '16px'}}
+                                    >
+                                        <img
+                                            className="w-fit rounded-3xl shadow-lg h-6 me-2"
+                                            src={'assets/images/apple1.png'}
+                                            alt="home screen photo"
+                                        />
+                                        Appstore
+                                    </button>
+                                    <button
+                                        className={'text-white bg-blue-900 px-8 py-5 rounded-l-full rounded-r-full font-semibold flex items-center'}
+                                        style={{fontSize: '16px'}}
+                                    >
+                                        <img
+                                            className="w-fit rounded-3xl shadow-lg h-6 me-2"
+                                            src={'assets/images/playstore.png'}
+                                            alt="home screen photo"
+                                        />
+                                        Google Play
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-
                     </div>
                 </div>
-
-                <p className={'mt-48'}>hello</p>
+                {/*<p className={'mt-48'}>hello</p>*/}
             </main>
+            <FooterComponent/>
+
         </div>
     );
 }
