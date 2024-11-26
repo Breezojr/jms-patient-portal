@@ -1,10 +1,12 @@
 'use client';
 import React, {useEffect, useState} from "react";
 import {Plus} from "lucide-react";
+import {useRouter} from "next/navigation"
 
 function HeaderComponent() {
-
     const [isScrolled, setIsScrolled] = useState(false);
+    const router = useRouter()
+
 
     // Handle scroll effect
     useEffect(() => {
@@ -19,6 +21,11 @@ function HeaderComponent() {
             window.removeEventListener("scroll", handleScroll);
         };
     }, []);
+
+    const handleNavigate = (url: string) => {
+        router.push(url)
+
+    }
 
 
     return (
@@ -41,8 +48,12 @@ function HeaderComponent() {
                         fontSize: '16px',
                         color: '#222222'
                     }}>
-                        <button className={'hover:text-blue-800'}>Doctors</button>
-                        <button className={'hover:text-blue-800'}>About Us</button>
+                        <button className={'hover:text-blue-800'}
+                                onClick={() =>handleNavigate('/doctor')}
+                        >Doctors</button>
+                        <button className={'hover:text-blue-800'}
+                                onClick={() =>handleNavigate('/about-us')}
+                        >About Us</button>
                         <button className={'hover:text-blue-800'}>Service</button>
                         <button className={'hover:text-blue-800'}>Contact Us</button>
                     </div>

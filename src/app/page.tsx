@@ -1,9 +1,14 @@
+"use client"
 import HeaderComponent from "@/components/header.component";
 import React from "react";
 import {Clock5, Plus} from "lucide-react";
 import FooterComponent from "@/components/footer.component";
+import {useRouter} from "next/navigation"
+import Skeleton from "@/app/skeleton";
 
 export default function Home() {
+    const router = useRouter()
+
 
     const imageFiles = [
         '/assets/images/partners/nhif.jpeg',
@@ -61,14 +66,11 @@ export default function Home() {
             subtitle: 'Online Application Process',
         },
 
-
     ]
 
-
     return (
-        <div className="min-h-screen mx-auto text-gray-700" style={{backgroundColor: '#FEFEFF'}}>
-            <HeaderComponent/>
-            <main className="px-64 ">
+        <Skeleton>
+            <div>
                 <div className={'w-full h-3/4 grid grid-cols-2 mb-48'}>
                     <div className={'flex flex-col pt-52 justify-end gap-12  h-3/4'}>
                         <div className={'flex flex-col'}>
@@ -352,7 +354,8 @@ export default function Home() {
                                 <div className={'mb-6'}>
                                     <h4 className={'text-gray-500'}
                                         style={{fontSize: '20px', fontWeight: 700,}}>Customer App</h4>
-                                    <p className={'text-gray-500'} style={{fontSize: '20px', fontWeight: 500,}}> You will get a credit card that will allow you to pay on anywhere.. </p>
+                                    <p className={'text-gray-500'} style={{fontSize: '20px', fontWeight: 500,}}> You
+                                        will get a credit card that will allow you to pay on anywhere.. </p>
                                 </div>
 
                                 <div className={'flex px-16 gap-4'}>
@@ -384,9 +387,13 @@ export default function Home() {
                     </div>
                 </div>
                 {/*<p className={'mt-48'}>hello</p>*/}
-            </main>
-            <FooterComponent/>
+            </div>
 
-        </div>
-    );
+
+        </Skeleton>
+
+
+
+)
+    ;
 }
