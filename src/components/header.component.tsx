@@ -67,6 +67,7 @@ function HeaderComponent() {
                 </div>
                 <div className={''}>
                     <button
+                        onClick={() => handleNavigate('/appointment')}
                         className={'text-white bg-blue-900 px-12 py-3 rounded-l-full rounded-r-full font-semibold flex items-center'}
                         style={{fontSize: '16px'}}
                     >Appointment
