@@ -7,7 +7,6 @@ function HeaderComponent() {
     const [isScrolled, setIsScrolled] = useState(false);
     const router = useRouter()
 
-
     // Handle scroll effect
     useEffect(() => {
         const handleScroll = () => {
@@ -24,9 +23,7 @@ function HeaderComponent() {
 
     const handleNavigate = (url: string) => {
         router.push(url)
-
     }
-
 
     return (
         <nav
@@ -36,11 +33,13 @@ function HeaderComponent() {
         >
             <div className="flex w-full justify-between  py-4">
                 <div className="flex items-center gap-32 ">
-                    <img
-                        className="h-14 w-fit"
-                        src="/assets/images/logo/jms-logo-original.png"
-                        alt="logo"
-                    />
+                    <button onClick={() => handleNavigate('/')} className="h-14 w-fit cursor-pointer">
+                        <img
+                            className="h-14 w-fit"
+                            src="/assets/images/logo/jms-logo-original.png"
+                            alt="logo"
+                        />
+                    </button>
                     {/* Navigation Links */}
                     <div className="flex items-center text-black gap-8" style={{
                         fontWeight: 500,
@@ -49,13 +48,21 @@ function HeaderComponent() {
                         color: '#222222'
                     }}>
                         <button className={'hover:text-blue-800'}
-                                onClick={() =>handleNavigate('/doctor')}
-                        >Doctors</button>
+                                onClick={() => handleNavigate('/doctor')}
+                        >Doctors
+                        </button>
                         <button className={'hover:text-blue-800'}
-                                onClick={() =>handleNavigate('/about-us')}
-                        >About Us</button>
-                        <button className={'hover:text-blue-800'}>Service</button>
-                        <button className={'hover:text-blue-800'}>Contact Us</button>
+                                onClick={() => handleNavigate('/about-us')}
+                        >About Us
+                        </button>
+                        <button className={'hover:text-blue-800'}
+                                onClick={() => handleNavigate('/services')}
+                        >Service
+                        </button>
+                        <button className={'hover:text-blue-800'}
+                                onClick={() => handleNavigate('/contact-us')}
+                        >Contact Us
+                        </button>
                     </div>
                 </div>
                 <div className={''}>
