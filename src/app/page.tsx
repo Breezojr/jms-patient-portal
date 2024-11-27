@@ -92,16 +92,18 @@ export default function Home() {
                             </div>
                             <div className={'py-12'}>
                                 <button
-                                    className={'text-white bg-blue-900 px-12 py-3 rounded-l-full rounded-r-full font-semibold flex items-center gap-2 justify-center'}
+                                    className="text-white bg-blue-900 px-12 py-3 rounded-l-full rounded-r-full font-semibold flex items-center gap-2 justify-center relative group transition-all duration-300 hover:shadow-[0_12px_30px_rgba(0,0,255,0.2)] hover:translate-y-[-4px]"
                                     style={{fontSize: '16px'}}
                                 >
                                     Read More
                                     <img
-                                        src={'/assets/images/arrow-white.svg'}
-                                        alt="Partner Logo"
-                                        className="w-fit h-4 object-contain"
+                                        src="/assets/images/arrow-white.svg"
+                                        alt="Arrow"
+                                        className="w-fit h-4 object-contain transition-all group-hover:translate-x-2"
                                     />
                                 </button>
+
+
                             </div>
                             <div className={'text-gray-700'}>
                                 <div className={'flex'}>
