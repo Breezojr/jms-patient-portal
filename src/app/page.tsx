@@ -1,14 +1,15 @@
 "use client"
-import HeaderComponent from "@/components/header.component";
 import React from "react";
 import {Clock5, Plus} from "lucide-react";
-import FooterComponent from "@/components/footer.component";
 import {useRouter} from "next/navigation"
 import Skeleton from "@/app/skeleton";
+import HoverEffectImage from "@/components/hover-effect-image";
 
 export default function Home() {
     const router = useRouter()
-
+    const handleNavigate = (url: string) => {
+        router.push(url)
+    }
 
     const imageFiles = [
         '/assets/images/partners/nhif.jpeg',
@@ -46,53 +47,38 @@ export default function Home() {
 
     const chooseUs = [
         {
-            title: 'Flexible payment terms',
-            description: 'Choose from a variety of payment options, including weekly, bi-weekly, or monthly installments, to fit your budget and schedule.',
-            subtitle: 'Weekly, by-weekly, monthly',
+            title: 'Personalized Care',
+            description: 'We focus on your unique health needs, creating personalized treatment plans for optimal results. Your well-being is our priority, and we ensure every visit is compassionate and effective.',
+            subtitle: 'Tailored to You',
             image: '/assets/images/service/family.png'
         },
         {
-            title: 'Compliant to Islamic credit terms',
-            description: 'Enjoy the convenience of purchases at zero interest fees. Our payment plans are transparent and easy to understand, so you can focus on what matters most - your purchase.',
+            title: 'Experienced Specialists',
+            description: 'Our team consists of highly skilled doctors and healthcare professionals. With years of experience and continuous learning, we provide the best care tailored to your needs.',
             image: '/assets/images/service/home-health.png',
-            subtitle: 'Zero Interest Fee',
-
+            subtitle: 'Expertise You Trust',
         },
-
         {
-            title: 'Fast and easy application',
-            description: 'Our online application process is quick and easy, no credit history required, simply enter a few basic details and get an instant decision.',
+            title: 'Comprehensive Services',
+            description: 'We offer a wide range of services, from general care to specialized treatments, all under one roof. Our state-of-the-art technology ensures a seamless experience for all your healthcare needs.',
             image: '/assets/images/service/minor-procedure.png',
-            subtitle: 'Online Application Process',
+            subtitle: 'All in One Place',
         },
-
     ]
 
     return (
         <Skeleton>
             <div>
-                <div className={'w-full h-3/4 grid grid-cols-2 mb-48'}>
-                    <div className={'flex flex-col pt-52 justify-end gap-12  h-3/4'}>
-                        <div className={'flex flex-col'}>
-                            <h5 className={'text-blue-900 font-semibold'}
-                                style={{
-                                    fontSize: '24px',
-                                }}
-                            >Top Doctors</h5>
-                            <h2 className={'font-semibold -mt-3'}
-                                style={{
-                                    fontSize: '48px',
-                                }}
-                            >Make Your</h2>
-                            <p className={'text-gray-500 -mt-3'}
-                               style={{
-                                   fontSize: '20px',
-                               }}
-                            >Life Healthy</p>
+                <div className={'w-full grid grid-cols-2 mb-48'}>
+                    <div className={'flex flex-col justify-end'}>
+                        <div className={'flex flex-col gap-3'}>
+                            <h5 className={'text-blue-900 font-semibold text-2xl '}>Top Doctors</h5>
+                            <h2 className={'font-semibold -mt-1 text-4xl'}>Make Your</h2>
+                            <p className={'text-gray-500 -mt-1 text-2xl'}>Life Healthy</p>
                         </div>
-                        <div>
+                        <div className={'py-6'}>
                             <button
-                                className={'text-white bg-blue-700 px-12 py-3 rounded-l-full rounded-r-full font-semibold flex items-center'}
+                                className={'text-white bg-blue-900 px-6 py-2 rounded-l-full rounded-r-full font-semibold flex items-center'}
                                 style={{fontSize: '16px'}}
                             >
                                 Read More
@@ -102,16 +88,18 @@ export default function Home() {
                         <div className={'text-gray-700'}>
                             <div className={'grid grid-cols-2'}>
                                 <div className={'text-gray-700'}>
-                                    <h5 className={'font-semibold '}>specialisation in</h5>
-                                    <div className={'flex flex-col'}>
+                                    <h5 className={'font-semibold mb-1 '}>Specialisation in</h5>
+                                    <div
+                                        className={'flex flex-col text-gray-500 ps-2 space-y-0 leading-tight text-sm font-semibold'}>
                                         <p>Cardiologists</p>
                                         <p>Audiologist</p>
                                         <p>Internists</p>
                                     </div>
                                 </div>
                                 <div className={'text-gray-700'}>
-                                    <h5 className={'font-semibold '}>Medical info</h5>
-                                    <div className={'flex flex-col'}>
+                                    <h5 className={'font-semibold mb-1 '}>Medical info</h5>
+                                    <div
+                                        className={'flex flex-col text-gray-500 ps-2 space-y-0 leading-tight text-sm font-semibold'}>
                                         <p>Dr. K.f. Brandina</p>
                                         <p>B.Kennedy</p>
                                     </div>
@@ -119,33 +107,28 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-                    <div className={'pt-14 mt-1'}>
-                        <div className={'ps-8'}>
-                            <img
-                                className="w-fit rounded-3xl shadow-lg"
-                                src="/assets/images/section-1.jpeg"
-                                alt="home screen photo"
-                                style={{
-                                    height: '70vh'
-                                }}
-                            />
-                        </div>
-                    </div>
+                    <HoverEffectImage/>
+
                 </div>
+
                 <div>
                     <h3 className={'font-semibold text-center text-2xl mb-4'}>Over 30+ partners and businesses growing
-                        with Laina Finance</h3>
-                    <div className={'flex justify-between gap-8 px-24'}>
+                        with JMS</h3>
+                    <div className="flex justify-between px-48">
                         {imageFiles.map((imageFile, index) => (
-                            <div key={index} className={''}>
+                            <div
+                                key={index}
+                                className="p-4 transition-transform transform-gpu duration-500 ease-in-out hover:scale-105 hover:shadow-xs hover:bg-gray-50 rounded-lg"
+                            >
                                 <img
                                     src={imageFile}
                                     alt="Partner Logo"
-                                    className="w-auto h-16  object-contain p-0"
+                                    className="w-auto h-16 object-contain"
                                 />
                             </div>
                         ))}
                     </div>
+
                 </div>
                 <div className={'mt-64'}>
                     <h3 className={'font-semibold text-center text-2xl mb-4'}>Our Services</h3>
@@ -165,7 +148,6 @@ export default function Home() {
                     </div>
                 </div>
 
-
                 <div className={'mt-64 flex flex-col items-center'}>
                     <img
                         src={'/assets/images/how-it-works/header-image.svg'}
@@ -173,13 +155,13 @@ export default function Home() {
                         className="w-auto h-16  object-contain p-0"
                     />
                     <h3 className={'font-semibold text-center text-2xl mb-4'}>How It Works</h3>
-                    <h3 className={'p'}>We provide flexible payment options</h3>
+                    <h3 className={'p'}>We Provide High Quality Health Services</h3>
                     <div className={'flex  flex-col'}>
 
                         <div className="grid grid-cols-5">
                             <div className="relative w-32 h-32 mx-auto mb-4">
                                 <img
-                                    src={'/assets/images/service/minor-procedure.png'}
+                                    src={'/assets/images/accessing-our-app.png'}
                                     alt="Partner Logo"
                                     className="w-auto h-16 object-contain p-0 absolute inset-0 m-auto"
                                 />
@@ -194,7 +176,7 @@ export default function Home() {
                             />
                             <div className="relative w-32 h-32 mx-auto mb-4">
                                 <img
-                                    src={'/assets/images/service/minor-procedure.png'}
+                                    src={'/assets/images/book-appointment.gif'}
                                     alt="Partner Logo"
                                     className="w-auto h-16 object-contain p-0 absolute inset-0 m-auto"
                                 />
@@ -210,7 +192,7 @@ export default function Home() {
 
                             <div className="relative w-32 h-32 mx-auto mb-4">
                                 <img
-                                    src={'/assets/images/service/minor-procedure.png'}
+                                    src={'/assets/images/visit-our-clinic.png'}
                                     alt="Partner Logo"
                                     className="w-auto h-16 object-contain p-0 absolute inset-0 m-auto"
                                 />
@@ -245,9 +227,9 @@ export default function Home() {
                                 <div className={'pe-24'}>
                                     <img
                                         className="w-fit rounded-3xl shadow-lg"
-                                        src="/assets/images/section-2.jpeg"
+                                        src="/assets/images/why-us.jpg"
                                         alt="home screen photo"
-                                        style={{height: '58vh'}}
+                                        // style={{height: '58vh'}}
 
                                     />
                                 </div>
@@ -280,8 +262,9 @@ export default function Home() {
                             </div>
                         </div>
                         <div className={'px-12'}>
-                            <h4 className={'text-black  mb-8'} style={{fontSize: '40px', fontWeight: 700}}>Why Choose
-                                Us</h4>
+                            <h4 className={'text-black  mb-8'} style={{fontSize: '40px', fontWeight: 700}}>
+                                Why Choose Us
+                            </h4>
                             {chooseUs.map((item, index) => (
                                 <div key={index}
                                      className={`text-gray-400 ${index !== chooseUs.length - 1 ? 'mb-8' : ''}`}
@@ -295,7 +278,7 @@ export default function Home() {
                         </div>
                     </div>
                     <div className={' mt-48'}>
-                        <div className={'flex shadow-md w-3/4 border border-gray-100 p-8'}>
+                        <div className={'flex shadow-md w-3/4 border border-gray-100 p-8 bg-blue-50'}>
                             <div className={'me-64 border border-gray-200 shadow-sm p-4 py-16'}>
                                 <Clock5 size={48}/>
                                 <h2 className={'mt-4 text-3xl font-bold mb-8'}>Opening Time</h2>
@@ -316,6 +299,7 @@ export default function Home() {
                                 <h2 className={'mb-2 font-semibold'}>Brian Ford</h2>
                                 <p className={'mb-2 font-extrabold text-gray-500'}>CEO & FOUNDER</p>
                                 <button
+                                    onClick={() => handleNavigate('/appointment')}
                                     className={'text-white bg-blue-900 px-12 py-3 rounded-l-full rounded-r-full font-semibold flex items-center'}
                                     style={{fontSize: '16px'}}
                                 >Appointment
@@ -393,7 +377,6 @@ export default function Home() {
         </Skeleton>
 
 
-
-)
-    ;
+    )
+        ;
 }

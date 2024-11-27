@@ -7,7 +7,7 @@ const DoctorPage = () => {
     const doctorInfos = [
         {
             name: 'Boniface Mwandob',
-            image: '/assets/images/general/avatar.png',
+            image: '/assets/images/doctor-jms.jpg',
             specilization: 'Cardiologist'
         },
         {

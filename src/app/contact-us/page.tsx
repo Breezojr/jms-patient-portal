@@ -1,6 +1,6 @@
 import Skeleton from "@/app/skeleton";
 import React from "react";
-import {Plus, Send} from "lucide-react";
+import { Send} from "lucide-react";
 
 const ServicePage = () => {
 

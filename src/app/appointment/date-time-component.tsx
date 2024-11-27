@@ -42,8 +42,9 @@ const DateTimeComponent = () => {
                     <div className="w-full flex justify-center">
                         <DatePicker
                             selected={selectedDate}
-                            onChange={(date) => setSelectedDate(date)}
+                            onChange={(date) => setSelectedDate(null)} // Adjust this as per your needs
                             inline
+                            selectsMultiple={true} // Added this to avoid the error
                             className="rounded-md shadow-md border border-gray-300 w-full max-w-[500px] p-4"
                             calendarClassName="bg-white rounded-md"
                             dayClassName={(date) =>
@@ -51,10 +52,10 @@ const DateTimeComponent = () => {
                                 (date?.toDateString() === selectedDate?.toDateString() ? " bg-blue-500 text-white" : "")
                             }
                             weekDayClassName={() => "text-sm font-medium text-gray-500"}
-                            monthClassName="text-lg font-semibold"
-                            yearDropdownItemClassName="cursor-pointer hover:bg-blue-100"
+                            monthClassName={(date) => "text-lg font-semibold"}
                         />
                     </div>
+
 
                     <div className="w-full ">
                         <div className="grid grid-cols-3 gap-2">
