@@ -68,49 +68,74 @@ export default function Home() {
 
     return (
         <Skeleton>
-            <div>
-                <div className={'w-full grid grid-cols-2 mb-48'}>
-                    <div className={'flex flex-col justify-end'}>
-                        <div className={'flex flex-col gap-3'}>
-                            <h5 className={'text-blue-900 font-semibold text-2xl '}>Top Doctors</h5>
-                            <h2 className={'font-semibold -mt-1 text-4xl'}>Make Your</h2>
-                            <p className={'text-gray-500 -mt-1 text-2xl'}>Life Healthy</p>
-                        </div>
-                        <div className={'py-6'}>
-                            <button
-                                className={'text-white bg-blue-900 px-6 py-2 rounded-l-full rounded-r-full font-semibold flex items-center'}
-                                style={{fontSize: '16px'}}
-                            >
-                                Read More
-                                <Plus size={14} strokeWidth={6} className={'ms-2'}/>
-                            </button>
-                        </div>
-                        <div className={'text-gray-700'}>
-                            <div className={'grid grid-cols-2'}>
-                                <div className={'text-gray-700'}>
-                                    <h5 className={'font-semibold mb-1 '}>Specialisation in</h5>
-                                    <div
-                                        className={'flex flex-col text-gray-500 ps-2 space-y-0 leading-tight text-sm font-semibold'}>
-                                        <p>Cardiologists</p>
-                                        <p>Audiologist</p>
-                                        <p>Internists</p>
+            <div >
+                <div className={'h-[68vh] mb-44'}>
+                    <div className={'w-full h-full grid grid-cols-2'}>
+                        <div className={'flex flex-col justify-end'}>
+                            <div className={'flex flex-col gap-3'}>
+                                <h5 className={'text-[#0f2793] font-[900] text-[22px]'}
+                                    style={{
+                                        fontFamily: 'Manrope, sans-serif',
+                                        WebkitTextStroke: '0.5px #0f2793', // Thickness and color of the stroke
+                                        // color: 'transparent'
+                                    }}
+                                >Top Doctors</h5>
+                                <h2 className={'font-semibold text-black -mt-1 text-6xl mb-4'}>Personalized Care
+                                    Tailored to
+                                    You</h2>
+                                <p className={'text-[#8593a3] -mt-1 font-[400] text-xl'}
+                                   style={{
+                                       WebkitTextStroke: '0.1px #8593a3', // Thickness and color of the stroke
+                                   }}
+                                > Say goodbye to long waits, transform your health journey with us,
+                                    Break free from traditional care, experience health the modern way</p>
+                            </div>
+                            <div className={'py-12'}>
+                                <button
+                                    className={'text-white bg-blue-900 px-12 py-3 rounded-l-full rounded-r-full font-semibold flex items-center gap-2 justify-center'}
+                                    style={{fontSize: '16px'}}
+                                >
+                                    Read More
+                                    <img
+                                        src={'/assets/images/arrow-white.svg'}
+                                        alt="Partner Logo"
+                                        className="w-fit h-4 object-contain"
+                                    />
+                                </button>
+                            </div>
+                            <div className={'text-gray-700'}>
+                                <div className={'flex'}>
+                                    <div className={'text-gray-700 me-2 py-2 px-1'}>
+
+                                        <h5 className={'font-bold text-xl mb-1 text-black'}>Specialisation In</h5>
+                                        <div
+                                            className={'flex flex-col text-[#8593a3] text-[16px] font-[400]'}
+                                            style={{
+                                                WebkitTextStroke: '0.1px #8593a3', // Thickness and color of the stroke
+                                            }}
+                                        >
+                                            <p>Cardiologists</p>
+                                            <p>Audiologist</p>
+                                            <p>Internists</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className={'text-gray-700'}>
-                                    <h5 className={'font-semibold mb-1 '}>Medical info</h5>
-                                    <div
-                                        className={'flex flex-col text-gray-500 ps-2 space-y-0 leading-tight text-sm font-semibold'}>
-                                        <p>Dr. K.f. Brandina</p>
-                                        <p>B.Kennedy</p>
+                                    <div className={'text-gray-700 me-2 py-2 px-1'}>
+                                        <h5 className={'font-bold text-xl mb-1 text-black'}>Medical info</h5>
+                                        <div
+                                            className={'flex flex-col text-[#8593a3] text-[16px] font-[400]'}
+                                            style={{
+                                                WebkitTextStroke: '0.1px #8593a3', // Thickness and color of the stroke
+                                            }}>
+                                            <p>Dr. K.f. Brandina</p>
+                                            <p>B.Kennedy</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <HoverEffectImage/>
                     </div>
-                    <HoverEffectImage/>
-
                 </div>
-
                 <div>
                     <h3 className={'font-semibold text-center text-2xl mb-4'}>Over 30+ partners and businesses growing
                         with JMS</h3>

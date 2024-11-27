@@ -11,7 +11,7 @@ export default function Skeleton({children}: Props) {
     return (
         <div className="min-h-screen mx-auto text-gray-700" style={{backgroundColor: '#FEFEFF'}}>
             <HeaderComponent/>
-            <main className="px-64 ">
+            <main className="px-64 pt-24">
                 {children}
             </main>
             <FooterComponent/>

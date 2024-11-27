@@ -26,9 +26,9 @@ export default function HoverEffectImage() {
     };
 
     return (
-        <div className="relative pt-14 mt-1">
+        <div className={'flex flex-col justify-end'}>
             <div
-                className="ps-8"
+                className="ps-12"
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
                 style={{
@@ -36,8 +36,9 @@ export default function HoverEffectImage() {
                 }}
             >
                 <img
-                    className="w-fit rounded-xl shadow-xs transition-transform transform-gpu duration-500 ease-out"
+                    className="w-fit h-[65vh] rounded-l shadow-xs transition-transform transform-gpu duration-500 ease-out"
                     src="/assets/images/homepage-jms.jpg"
+                    // src="/assets/images/doctor-jms.jpg"
                     alt="home screen photo"
                     style={style}
                 />
